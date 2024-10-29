@@ -34,6 +34,28 @@
 
     </style>
 <div id="wrapper">
+<style>
+        .navbar {
+            background-image: url('https://www.shutterstock.com/image-photo/engineer-teamwork-meeting-drawing-working-600nw-2294764107.jpg');
+            background-size: cover; /* Cover the entire navbar */
+            background-position: center; /* Center the image */
+            color: white; /* Change text color to white for visibility */
+        }
+        .navbar a {
+            color: white !important; /* Ensure link colors are white */
+        }
+        .sidebar-brand{
+          background: hsla(39, 100%, 50%, 1);
+
+background: linear-gradient(90deg, hsla(39, 100%, 50%, 1) 0%, hsla(34, 86%, 58%, 1) 50%, hsla(335, 81%, 65%, 1) 100%);
+
+background: -moz-linear-gradient(90deg, hsla(39, 100%, 50%, 1) 0%, hsla(34, 86%, 58%, 1) 50%, hsla(335, 81%, 65%, 1) 100%);
+
+background: -webkit-linear-gradient(90deg, hsla(39, 100%, 50%, 1) 0%, hsla(34, 86%, 58%, 1) 50%, hsla(335, 81%, 65%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", endColorstr="#F0A13A", GradientType=1 );
+        }
+    </style>
     <!-- Sidebar -->
    <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
