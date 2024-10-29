@@ -548,7 +548,7 @@ app.get("/api/tasks", (req, res) => {
     const query = `
         SELECT 
             tasks.id, 
-            projects.name AS project_name, 
+            projects.project_name AS project_name, 
             tasks.name AS task_name,
             tasks.description, 
             tasks.date, 
@@ -656,7 +656,7 @@ app.get("/api/invoices", (req, res) => {
     const query = `
         SELECT 
             invoices.id, 
-            projects.name AS project_name, 
+            projects.project_name AS project_name, 
             invoices.invoice_number,
             invoices.invoice_object,
             invoices.client_name,
