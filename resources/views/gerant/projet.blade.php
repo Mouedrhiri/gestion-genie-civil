@@ -325,7 +325,28 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
     </div>
 </div>
 
-
+<!-- Delete Project Modal -->
+<div class="modal fade" id="deleteProjectModal" tabindex="-1" role="dialog" aria-labelledby="deleteProjectModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteProjectModalLabel">Delete Project</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete this project?</p>
+        <form id="deleteProjectForm">
+          <input type="hidden" id="deleteProjectId" name="id">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 
 
 
@@ -456,6 +477,23 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
             }
         })
         .catch(error => console.error('Error updating project:', error));
+    });
+    document.getElementById('deleteProjectForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const projectId = document.getElementById('deleteProjectId').value;
+      fetch(`http://localhost:3000/api/projects/${projectId}`, {
+        method: 'DELETE'
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.error) {
+          alert('Error: ' + data.error);
+        } else {
+          alert('Project deleted successfully!');
+          window.location.reload();
+        }
+      })
+      .catch(error => console.error('Error:', error));
     });
 });
 
