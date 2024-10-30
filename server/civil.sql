@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 29 oct. 2024 à 15:06
+-- Généré le : mer. 30 oct. 2024 à 19:12
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -152,7 +152,9 @@ CREATE TABLE `invoices` (
 
 INSERT INTO `invoices` (`id`, `project_id`, `invoice_number`, `invoice_object`, `client_name`, `gross_total`, `total_after_deduction`, `status`) VALUES
 (1, 1, '74257257', 'gsdgsdg', 'gdsgdsgd', 211646.00, 54654.00, 'Paid'),
-(2, 1, '54654', 'feffv', 'edff', 4165.00, 1651.00, 'Paid');
+(2, 1, '54654', 'feffv', 'edff', 4165.00, 1651.00, 'Paid'),
+(3, 1, '54654', 'feffv', 'rgzg', 54646.00, 46546.00, 'Paid'),
+(4, 1, '5858585', 'feffv', 'edff', 52582.00, 8528.00, 'Unpaid');
 
 -- --------------------------------------------------------
 
@@ -287,7 +289,9 @@ CREATE TABLE `projects` (
 --
 
 INSERT INTO `projects` (`id`, `client_name`, `project_name`, `project_object`, `nature_of_service`, `service_order_date`, `execution_delay`, `amount`, `status`) VALUES
-(1, 'rgzg', '', 'rgg', 'reger', '2024-10-30', 0, 1616.00, 'In Progress');
+(1, 'rgzg', 'gvdg', 'rgg', 'reger', '2024-10-30', 0, 1616.00, 'In Progress'),
+(2, 'dfgthtrh', '', 'trhdff', 'dfhdfhh', '2024-10-23', 0, 99999999.99, 'In Progress'),
+(3, 'ujytyj', 'ytjj', 'yjtfjyj', 'jfjfgj', '2024-11-02', 56498, 8554.00, 'In Progress');
 
 -- --------------------------------------------------------
 
@@ -357,7 +361,8 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('35pG4FQhFoyej28Mryu9KIV2NLagS8aWZ3TMyU2G', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiVU1LWHV1UDFZTkdoNmxHcUJlNnR2bmVxWlI0bTRiZHJReXBIU0lIRCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mzg6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9kYXNoYm9hcmQtZ2VyYW50Ijt9fQ==', 1730210453);
+('mp1mOcwX5XUHhfJgsQNXfcA9JUnEQTGlVo4rHAbE', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiblJjUGJVeURnOXBwaUx4QlhCcElseFR0bTB4SWNtaFRRR1l1NUtVcSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9kYXNoYm9hcmQtdGVjaG5pY2llbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1730305795),
+('rGs57OhEHj43YGTlXgYlJhmJqgjJcdDfLw6yQtQl', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoic200NVIyMGl1TTBLUTJnQXdGNmJVRUdBb29uRkRmejJUWThFSGJWZyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mzg6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9kYXNoYm9hcmQtZ2VyYW50Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1730290868);
 
 -- --------------------------------------------------------
 
@@ -381,7 +386,8 @@ CREATE TABLE `tasks` (
 INSERT INTO `tasks` (`id`, `project_id`, `name`, `description`, `date`, `status`) VALUES
 (1, 1, 'efezf', 'jdfjhj', '2024-10-15', 'Completed'),
 (2, 1, 'ezfef', 'zdzagdyih', '2024-10-16', 'In Progress'),
-(4, 1, 'zdzaf', 'fgfdg', '2024-10-31', 'In Progress');
+(4, 1, 'zdzaf', 'fgfdg', '2024-10-31', 'In Progress'),
+(5, 3, 'regferg', 'gergerg', '2024-10-25', 'Not Started');
 
 -- --------------------------------------------------------
 
@@ -402,7 +408,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `password`, `role`) VALUES
-(1, 'Nasma OUARDI', 'nasma@gamil.com', '$2a$12$RTMJaH/4i7tWntJeyZgliOcJtHFbwkNhQ8SMR2CMvOL24KwxDZBcC', 'ingenieur'),
+(1, 'Nasma OUARDI', 'nasma@gamil.com', '$2a$12$LmRc72xiqEUwkhI1qkas3uKASii.Qoo8fw/68rCR6AkpbuRl/ftK.', 'ingenieur'),
 (3, 'Mohammed OUEDRHIRI', 'employee@gmail.com', '$2a$12$LmRc72xiqEUwkhI1qkas3uKASii.Qoo8fw/68rCR6AkpbuRl/ftK.', 'technicien'),
 (4, 'Majd Bennouna', 'bennounamajd@gmail.com', '$2a$12$LmRc72xiqEUwkhI1qkas3uKASii.Qoo8fw/68rCR6AkpbuRl/ftK.', 'gerant');
 
@@ -566,7 +572,7 @@ ALTER TABLE `files_project`
 -- AUTO_INCREMENT pour la table `invoices`
 --
 ALTER TABLE `invoices`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `jobs`
@@ -596,7 +602,7 @@ ALTER TABLE `notifications`
 -- AUTO_INCREMENT pour la table `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `project_requests`
@@ -614,7 +620,7 @@ ALTER TABLE `rendez_vous`
 -- AUTO_INCREMENT pour la table `tasks`
 --
 ALTER TABLE `tasks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `user`
@@ -648,6 +654,7 @@ ALTER TABLE `rendez_vous`
 -- Contraintes pour la table `tasks`
 --
 ALTER TABLE `tasks`
+  ADD CONSTRAINT `fk_project_task` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `tasks_ibfk_1` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`) ON DELETE CASCADE;
 COMMIT;
 
