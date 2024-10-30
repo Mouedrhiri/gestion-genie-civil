@@ -36,6 +36,17 @@ background: -webkit-linear-gradient(90deg, hsla(39, 100%, 50%, 1) 0%, hsla(34, 8
 
 filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", endColorstr="#F0A13A", GradientType=1 );
         }
+        .overlay{
+          background: hsla(39, 100%, 50%, 1);
+
+background: linear-gradient(90deg, hsla(39, 100%, 50%, 1) 0%, hsla(34, 86%, 58%, 1) 50%, hsla(335, 81%, 65%, 1) 100%);
+
+background: -moz-linear-gradient(90deg, hsla(39, 100%, 50%, 1) 0%, hsla(34, 86%, 58%, 1) 50%, hsla(335, 81%, 65%, 1) 100%);
+
+background: -webkit-linear-gradient(90deg, hsla(39, 100%, 50%, 1) 0%, hsla(34, 86%, 58%, 1) 50%, hsla(335, 81%, 65%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", endColorstr="#F0A13A", GradientType=1 );
+        }
     </style>
     <style>
         .badge-warning {
@@ -65,9 +76,9 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item active">
-        <a class="nav-link" href="/dashboard-directeur">
+        <a class="nav-link" href="/dashboard-ingenieur">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard , Bienvenue Directeur</span></a>
+          <span>Dashboard </span></a>
       </li>
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
@@ -82,27 +93,15 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
         <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Projets et Demandes</h6>
-            <a class="collapse-item" href="/projet-gerant">Projets</a>
-            <a class="collapse-item" href="/demande_de_projet-gerant">Demandes des Projets</a>
+            <a class="collapse-item" href="/projet-ingenieur">Projets</a>
+            <a class="collapse-item" href="/demande_de_projet-ingenieur">Demandes des Projets</a>
           </div>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/facture-gerant">
-          <i class="fas fa-file-invoice"></i>
-          <span>Factures</span>
-        </a>
-      </li>
        <li class="nav-item">
-        <a class="nav-link" href="/tache-gerant">
+        <a class="nav-link" href="/tache-ingenieur">
          <i class="fa fa-tasks"></i>
           <span>Tâches</span>
-        </a>
-      </li>
-        <li class="nav-item">
-        <a class="nav-link" href="/matriel-gerant">
-          <i class="fa fa-industry"></i>
-          <span>Materiels</span>
         </a>
       </li>
       <hr class="sidebar-divider">
@@ -177,8 +176,8 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
             <div class="col-lg-12 mb-4">
             <div class="card">
     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-        <h6 class="m-0 font-weight-bold text-primary">Project List</h6>
-        <button class="btn btn-primary" data-toggle="modal" data-target="#addProjectModal">Add Project</button>
+        <h6 class="m-0 font-weight-bold text-danger">Project List</h6>
+        <button class="btn btn-primary overlay" data-toggle="modal" data-target="#addProjectModal">Add Project</button>
     </div>
     <div class="table-responsive">
         <table class="table align-items-center table-flush">
@@ -186,6 +185,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
                 <tr>
                     <th>ID</th>
                     <th>Client Name</th>
+                    <th>Project  Name</th>
                     <th>Project Object</th>
                     <th>Nature of Service</th>
                     <th>Service Order Date</th>
@@ -221,6 +221,10 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
                     <div class="form-group">
                         <label for="projectObject">Project Object</label>
                         <input type="text" class="form-control" id="projectObject" name="project_object" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="projectName">Project Name</label>
+                        <input type="text" class="form-control" id="projectName" name="project_name" required>
                     </div>
                     <div class="form-group">
                         <label for="natureOfService">Nature of Service</label>
@@ -269,6 +273,10 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
                     <div class="form-group">
                         <label for="updateClientName">Client Name</label>
                         <input type="text" class="form-control" id="updateClientName" name="client_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="updateProjectName">Project Name</label>
+                        <input type="text" class="form-control" id="updateProjectName" name="project_name" required>
                     </div>
                     <div class="form-group">
                         <label for="updateProjectObject">Project Object</label>
@@ -371,6 +379,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
                         <tr>
                             <td>${project.id}</td>
                             <td>${project.client_name}</td>
+                            <td>${project.project_name}</td>
                             <td>${project.project_object}</td>
                             <td>${project.nature_of_service}</td>
                             <td>${project.service_order_date}</td>
@@ -382,7 +391,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
                                 </span>
                             </td>
                             <td>
-                                <button class="btn btn-sm btn-warning" onclick="openUpdateProjectModal(${project.id}, '${project.client_name}', '${project.project_object}', '${project.nature_of_service}', '${project.service_order_date}', '${project.execution_delay}', ${project.amount}, '${project.status}')">Update</button>
+                                <button class="btn btn-sm btn-warning" onclick="openUpdateProjectModal(${project.id}, '${project.client_name}','${project.project_name}', '${project.project_object}', '${project.nature_of_service}', '${project.service_order_date}', '${project.execution_delay}', ${project.amount}, '${project.status}')">Update</button>
                                 <button class="btn btn-sm btn-danger" onclick="openDeleteProjectModal(${project.id})">Delete</button>
                             </td>
                         </tr>
@@ -438,9 +447,10 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
     });
 });
 
-function openUpdateProjectModal(id, client_name, project_object, nature_of_service, service_order_date, execution_delay, amount, status) {
+function openUpdateProjectModal(id, client_name,projectName, project_object, nature_of_service, service_order_date, execution_delay, amount, status) {
     document.getElementById('updateProjectId').value = id;
     document.getElementById('updateClientName').value = client_name; // Update to match the HTML IDs
+    document.getElementById('updateProjectName').value = projectName;
     document.getElementById('updateProjectObject').value = project_object; 
     document.getElementById('updateNatureOfService').value = nature_of_service; 
     document.getElementById('updateServiceOrderDate').value = service_order_date; 

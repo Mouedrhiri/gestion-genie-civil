@@ -63,7 +63,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon"></div>
-        <div class="sidebar-brand-text mx-3">Civil Enterprise</div>
+        <div class="sidebar-brand-text mx-3">MAJD SARL</div>
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item active">
@@ -134,24 +134,24 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
                   <div class="icon-circle bg-primary">
                     <i class="fas fa-file-alt text-white"></i>
                   </div>
-                  <div class="text-truncate">Project Update Notification</div>
+                  <div class="text-truncate">Fait une Mise à jour de Projet</div>
                   <div class="small text-gray-500">December 12, 2024</div>
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="icon-circle bg-success">
                     <i class="fas fa-tools text-white"></i>
                   </div>
-                  <div class="text-truncate">Maintenance Reminder</div>
+                  <div class="text-truncate">Rappelez vous de la maintenance</div>
                   <div class="small text-gray-500">December 7, 2024</div>
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="icon-circle bg-warning">
                     <i class="fas fa-exclamation-triangle text-white"></i>
                   </div>
-                  <div class="text-truncate">Emergency Alert</div>
+                  <div class="text-truncate">Alert d'urgence</div>
                   <div class="small text-gray-500">December 2, 2024</div>
                 </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Voir tous les Alerts</a>
               </div>
             </li>
 
@@ -182,7 +182,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
         <!-- Main Content -->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Engineering Dashboard</h1>
+            <h1 class="h3 mb-0 text-gray-800">Bienvenue OUARDI Nasma </h1>
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="./">Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
@@ -195,7 +195,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
             <div class="col-lg-6 mb-4">
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Project Requests</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Demandes de Projet</h6>
                 </div>
                 <div class="card-body">
                   <div class="d-flex align-items-center mb-3">
@@ -290,15 +290,15 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Pret pour partir?</h5>
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">×</span>
                 </button>
               </div>
-              <div class="modal-body">Are you sure you want to logout?</div>
+              <div class="modal-body">Etes vous sur de se déconnecter?</div>
               <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+                <a class="btn btn-primary" href="login.html">Déconnecter</a>
               </div>
             </div>
           </div>

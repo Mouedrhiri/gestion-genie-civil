@@ -44,7 +44,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
         </div>
-        <div class="sidebar-brand-text mx-3">Civil Entreprise</div>
+        <div class="sidebar-brand-text mx-3">MAJD SARL</div>
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item active">

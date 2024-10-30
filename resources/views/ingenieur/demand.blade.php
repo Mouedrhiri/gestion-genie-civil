@@ -36,6 +36,17 @@ background: -webkit-linear-gradient(90deg, hsla(39, 100%, 50%, 1) 0%, hsla(34, 8
 
 filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", endColorstr="#F0A13A", GradientType=1 );
         }
+        .overlay{
+          background: hsla(39, 100%, 50%, 1);
+
+background: linear-gradient(90deg, hsla(39, 100%, 50%, 1) 0%, hsla(34, 86%, 58%, 1) 50%, hsla(335, 81%, 65%, 1) 100%);
+
+background: -moz-linear-gradient(90deg, hsla(39, 100%, 50%, 1) 0%, hsla(34, 86%, 58%, 1) 50%, hsla(335, 81%, 65%, 1) 100%);
+
+background: -webkit-linear-gradient(90deg, hsla(39, 100%, 50%, 1) 0%, hsla(34, 86%, 58%, 1) 50%, hsla(335, 81%, 65%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", endColorstr="#F0A13A", GradientType=1 );
+        }
     </style>
 <div id="wrapper">
     <!-- Sidebar -->
@@ -43,13 +54,13 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
         </div>
-        <div class="sidebar-brand-text mx-3">Civil Entreprise</div>
+        <div class="sidebar-brand-text mx-3">MAJD SARL</div>
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item active">
-        <a class="nav-link" href="/dashboard-directeur">
+        <a class="nav-link" href="/dashboard-ingenieur">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard , Bienvenue Directeur</span></a>
+          <span>Dashboard</span></a>
       </li>
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
@@ -64,29 +75,16 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
         <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Projets et Demandes</h6>
-            <a class="collapse-item" href="/projet-gerant">Projets</a>
-            <a class="collapse-item" href="/demande_de_projet-gerant">Demandes des Projets</a>
+            <a class="collapse-item" href="/projet-ingenieur">Projets</a>
+            <a class="collapse-item" href="/demande_de_projet-ingenieur">Demandes des Projets</a>
           </div>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/facture-gerant">
-          <i class="fas fa-file-invoice"></i>
-          <span>Factures</span>
-        </a>
-      </li>
        <li class="nav-item">
-        <a class="nav-link" href="/tache-gerant">
+        <a class="nav-link" href="/tache-ingenieur">
          <i class="fa fa-tasks"></i>
           <span>Tâches</span>
         </a>
-      </li>
-        <li class="nav-item">
-        <a class="nav-link" href="/matriel-gerant">
-          <i class="fa fa-industry"></i>
-          <span>Materiels</span>
-        </a>
-      </li>
       <hr class="sidebar-divider">
       <div class="version" id="version-ruangadmin"></div>
     </ul>
@@ -127,7 +125,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <img class="img-profile rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqzimYL8cryUexi41Y0o2AIXlbtmOvOB4bgA&s" style="max-width: 60px">
-                <span class="ml-2 d-none d-lg-inline text-white small">Nasma OUARDI</span>
+                <span class="ml-2 d-none d-lg-inline text-white small">Majd BENNOUNA</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
@@ -147,11 +145,11 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Requests Listes</h1>
+            <h1 class="h3 mb-0 text-gray-800">Liste des demandes</h1>
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="./">Home</a></li>
-              <li class="breadcrumb-item">Requests</li>
-              <li class="breadcrumb-item active" aria-current="page">Requests Listes</li>
+              <li class="breadcrumb-item"><a href="/dashboard-ingeniur">Home</a></li>
+              <li class="breadcrumb-item">Projet et demandes</li>
+              <li class="breadcrumb-item active" aria-current="page">Liste des demandes</li>
             </ol>
           </div>
 
@@ -161,18 +159,18 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
 <div class="col-lg-12 mb-4">
     <div class="card">
         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-primary">Project Requests</h6>
-            <button class="btn btn-primary" data-toggle="modal" data-target="#addProjectRequestModal">Add Material</button>
+            <h6 class="m-0 font-weight-bold text-danger">Deamandes de projet</h6>
+            <button class="btn btn-primary overlay" data-toggle="modal" data-target="#addProjectRequestModal">Ajouter Demand</button>
         </div>
         <div class="table-responsive">
             <table class="table align-items-center table-flush">
                 <thead class="thead-light">
                     <tr>
                         <th>ID</th>
-                        <th>Project Name</th>
-                        <th>Project Description</th>
-                        <th>Request Date</th>
-                        <th>Status</th>
+                        <th>Nom du projet</th>
+                        <th>Description du projet</th>
+                        <th>Dat de la demande</th>
+                        <th>Etat</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -189,40 +187,40 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
         <div class="modal-content">
             <form id="addProjectRequestForm">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="addProjectRequestModalLabel">Add Project Request</h5>
+                    <h5 class="modal-title" id="addProjectRequestModalLabel">Ajouter une demande de projet</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="userId">User</label>
+                        <label for="userId">Utilisateur</label>
                         <select id="userId" name="user_id" class="form-control" required></select>
                     </div>
                     <div class="form-group">
-                        <label for="requestDate">Request Date</label>
+                        <label for="requestDate">Date de la demande</label>
                         <input type="date" class="form-control" id="requestDate" name="request_date" required>
                     </div>
                     <div class="form-group">
-                        <label for="projectName">Project Name</label>
+                        <label for="projectName">Nom du projet</label>
                         <input type="text" class="form-control" id="projectName" name="project_name" required>
                     </div>
                     <div class="form-group">
-                        <label for="projectDescription">Project Description</label>
+                        <label for="projectDescription">Description du projet</label>
                         <textarea class="form-control" id="projectDescription" name="project_description"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="status">Status</label>
+                        <label for="status">Etat</label>
                         <select id="status" name="status" class="form-control" required>
-                            <option value="Pending">Pending</option>
-                            <option value="Approved">Approved</option>
-                            <option value="Rejected">Rejected</option>
+                            <option value="Pending">En attente</option>
+                            <option value="Approved">Approuvée</option>
+                            <option value="Rejected">Rejeté</option>
                         </select>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Add Request</button>
+                    <button type="submit" class="btn btn-primary">Ajouter une demande</button>
                 </div>
             </form>
         </div>
@@ -236,7 +234,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
         <div class="modal-content">
             <form id="updateProjectRequestForm">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="updateProjectRequestModalLabel">Update Project Request</h5>
+                    <h5 class="modal-title" id="updateProjectRequestModalLabel">Modifier une demande</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -244,33 +242,33 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
                 <div class="modal-body">
                     <input type="hidden" id="updateRequestId" name="id">
                     <div class="form-group">
-                        <label for="updateUserId">User</label>
+                        <label for="updateUserId">Utilisateur</label>
                         <select id="updateUserId" name="user_id" class="form-control" required></select>
                     </div>
                     <div class="form-group">
-                        <label for="updateRequestDate">Request Date</label>
+                        <label for="updateRequestDate">Date de demande</label>
                         <input type="date" class="form-control" id="updateRequestDate" name="request_date" required>
                     </div>
                     <div class="form-group">
-                        <label for="updateProjectName">Project Name</label>
+                        <label for="updateProjectName">Nom du projet</label>
                         <input type="text" class="form-control" id="updateProjectName" name="project_name" required>
                     </div>
                     <div class="form-group">
-                        <label for="updateProjectDescription">Project Description</label>
+                        <label for="updateProjectDescription">Description du projet</label>
                         <textarea class="form-control" id="updateProjectDescription" name="project_description"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="updateStatus">Status</label>
+                        <label for="updateStatus">Etat</label>
                         <select id="updateStatus" name="status" class="form-control" required>
-                            <option value="Pending">Pending</option>
-                            <option value="Approved">Approved</option>
-                            <option value="Rejected">Rejected</option>
+                            <option value="Pending">En attente</option>
+                            <option value="Approved">Approuvée</option>
+                            <option value="Rejected">Rejetée</option>
                         </select>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Update Request</button>
+                    <button type="submit" class="btn btn-primary">Modifier une demande</button>
                 </div>
             </form>
         </div>
@@ -282,17 +280,17 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="deleteProjectRequestModalLabel">Delete Project Request</h5>
+                <h5 class="modal-title" id="deleteProjectRequestModalLabel">Supprimer une demande</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <p>Are you sure you want to delete this project request?</p>
+                <p>Etes vous sur que vous voulez la supprimer?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" id="confirmDelete" class="btn btn-danger">Delete</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                <button type="button" id="confirmDelete" class="btn btn-danger">Supprimer</button>
             </div>
         </div>
     </div>
@@ -307,17 +305,17 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabelLogout">Ohh No!</h5>
+                  <h5 class="modal-title" id="exampleModalLabelLogout">Ohh Non!</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
-                  <p>Are you sure you want to logout?</p>
+                  <p>Etes vous sur que vous voulez deconnecter?</p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
-                  <a href="/" class="btn btn-primary">Logout</a>
+                  <a href="/" class="btn btn-primary overlay">Deconnecter</a>
                 </div>
               </div>
             </div>
@@ -352,9 +350,8 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
                         <tr>
                             <td>${request.id}</td>
                             <td>${request.user_name}</td>
-                            <td>${request.request_date}</td>
-                            <td>${request.project_name}</td>
                             <td>${request.project_description}</td>
+                            <td>${request.request_date}</td>
                             <td>${getStatusBadge(request.status)}</td>
                             <td>
                                 <button class="btn btn-sm btn-warning" onclick="openUpdateProjectRequestModal(${request.id}, '${request.user_id}', '${request.request_date}', '${request.project_name}', '${request.project_description}', '${request.status}')">Update</button>

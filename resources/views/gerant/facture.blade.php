@@ -36,6 +36,15 @@ background: -webkit-linear-gradient(90deg, hsla(39, 100%, 50%, 1) 0%, hsla(34, 8
 
 filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", endColorstr="#F0A13A", GradientType=1 );
         }
+        .overlay{
+          background: linear-gradient(90deg, hsla(39, 100%, 50%, 1) 0%, hsla(34, 86%, 58%, 1) 50%, hsla(335, 81%, 65%, 1) 100%);
+
+background: -moz-linear-gradient(90deg, hsla(39, 100%, 50%, 1) 0%, hsla(34, 86%, 58%, 1) 50%, hsla(335, 81%, 65%, 1) 100%);
+
+background: -webkit-linear-gradient(90deg, hsla(39, 100%, 50%, 1) 0%, hsla(34, 86%, 58%, 1) 50%, hsla(335, 81%, 65%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", endColorstr="#F0A13A", GradientType=1 );
+        }
     </style>
 <div id="wrapper">
     <!-- Sidebar -->
@@ -49,7 +58,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
       <li class="nav-item active">
         <a class="nav-link" href="/dashboard-directeur">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard , Bienvenue Directeur</span></a>
+          <span>Dashboard</span></a>
       </li>
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
@@ -127,7 +136,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <img class="img-profile rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqzimYL8cryUexi41Y0o2AIXlbtmOvOB4bgA&s" style="max-width: 60px">
-                <span class="ml-2 d-none d-lg-inline text-white small">Nasma OUARDI</span>
+                <span class="ml-2 d-none d-lg-inline text-white small">Majd BENNOUNA</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
@@ -161,8 +170,8 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
 <div class="col-lg-12 mb-4">
   <div class="card">
     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-      <h6 class="m-0 font-weight-bold text-primary">Factures</h6>
-      <button class="btn btn-primary" data-toggle="modal" data-target="#addInvoiceModal">Ajouter Facture</button>
+      <h6 class="m-0 font-weight-bold text-danger">Factures</h6>
+      <button class="btn btn-primary overlay" data-toggle="modal" data-target="#addInvoiceModal">Ajouter Facture</button>
     </div>
     <div class="table-responsive">
       <table class="table align-items-center table-flush">
@@ -174,6 +183,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
             <th>Total brut</th>
             <th>Total après déduction</th>
             <th>Status</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody id="invoiceTableBody">
@@ -223,12 +233,12 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
           <div class="form-group">
             <label for="status">Status</label>
             <select class="form-control" id="status" name="status" required>
-              <option value="Unpaid">Non payé</option>
-              <option value="Paid">Payé</option>
+              <option value="Unpaid">Non payée</option>
+              <option value="Paid">Payée</option>
               <option value="Overdue">En retard</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-primary">Add Invoice</button>
+          <button type="submit" class="btn btn-primary overlay">Add Invoice</button>
         </form>
       </div>
     </div>
@@ -275,12 +285,12 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
           <div class="form-group">
             <label for="update_status">Status</label>
             <select class="form-control" id="update_status" name="status" required>
-              <option value="Unpaid">Non payé</option>
-              <option value="Paid">Payé</option>
+              <option value="Unpaid">Non payée</option>
+              <option value="Paid">Payée</option>
               <option value="Overdue">En retard</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-primary">Update Invoice</button>
+          <button type="submit" class="btn btn-primary overlay">Update Invoice</button>
         </form>
       </div>
     </div>
@@ -298,17 +308,17 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabelLogout">Ohh No!</h5>
+                  <h5 class="modal-title" id="exampleModalLabelLogout">Ohh Non!</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
-                  <p>Are you sure you want to logout?</p>
+                  <p>Etes vous sur de se deconnecter?</p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
-                  <a href="/" class="btn btn-primary">Logout</a>
+                  <button type="button" class="btn btn-outline-primary overlay" data-dismiss="modal">Annuler</button>
+                  <a href="/" class="btn btn-primary">Se Déconnecter</a>
                 </div>
               </div>
             </div>
@@ -402,8 +412,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 const tableBody = document.getElementById('invoiceTableBody');
                 tableBody.innerHTML = invoices.map(invoice => `
                     <tr>
-                        <td>${invoice.id}</td>
-                        <td>${invoice.project_name || 'N/A'}</td>
                         <td>${invoice.invoice_number}</td>
                         <td>${invoice.invoice_object || 'N/A'}</td>
                         <td>${invoice.client_name || 'N/A'}</td>
@@ -411,7 +419,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <td>${invoice.total_after_deduction}</td>
                         <td>${getStatusBadge(invoice.status)}</td>
                         <td>
-                            <button class="btn btn-sm btn-warning" onclick="openUpdateInvoiceModal(${invoice.id}, '${invoice.project_id}', '${invoice.invoice_number}', '${invoice.invoice_object}', '${invoice.client_name}', ${invoice.gross_total}, ${invoice.total_after_deduction}, '${invoice.status}')">Update</button>
+                            <button class="btn btn-sm btn-warning" onclick="openUpdateInvoiceModal(${invoice.id}, '${invoice.project_name}', '${invoice.invoice_number}', '${invoice.invoice_object}', '${invoice.client_name}', ${invoice.gross_total}, ${invoice.total_after_deduction}, '${invoice.status}')">Update</button>
                             <button class="btn btn-sm btn-danger" onclick="confirmDeleteInvoice(${invoice.id})">Delete</button>
                         </td>
                     </tr>
@@ -440,9 +448,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Open Update Invoice Modal
-    window.openUpdateInvoiceModal = function(id, projectId, invoiceNumber, invoiceObject, clientName, grossTotal, totalAfterDeduction, status) {
+    window.openUpdateInvoiceModal = function(id, project_name, invoiceNumber, invoiceObject, clientName, grossTotal, totalAfterDeduction, status) {
         document.getElementById('update_invoice_id').value = id;
-        document.getElementById('update_project_id').value = projectId;
+        document.getElementById('update_project_id').value = project_name;
         document.getElementById('update_invoice_number').value = invoiceNumber;
         document.getElementById('update_invoice_object').value = invoiceObject;
         document.getElementById('update_client_name').value = clientName;
@@ -467,9 +475,10 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(projects => {
                 const projectSelects = document.querySelectorAll('#project_id, #update_project_id');
+                console.log(projects);
                 projectSelects.forEach(select => {
                     select.innerHTML = projects.map(project => 
-                        `<option value="${project.id}">${project.name}</option>`
+                        `<option value="${project.id}">${project.project_name}</option>`
                     ).join('');
                 });
             })

@@ -39,11 +39,11 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
     </style>
 <div id="wrapper">
     <!-- Sidebar -->
-    <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
+   <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
         </div>
-        <div class="sidebar-brand-text mx-3">Civil Entreprise</div>
+        <div class="sidebar-brand-text mx-3">MAJD SARL</div>
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item active">
@@ -55,7 +55,6 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
       <div class="sidebar-heading">
         Options
       </div>
-      
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseForm" aria-expanded="true"
           aria-controls="collapseForm">
@@ -70,7 +69,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
           </div>
         </div>
       </li>
-      <li class="nav-item">
+       <li class="nav-item">
         <a class="nav-link" href="/tache-ingenieur">
          <i class="fa fa-tasks"></i>
           <span>Tâches</span>
@@ -147,26 +146,22 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
           <div class="row">
           <!-- Employee Table -->
 <!-- Materials Table -->
-<!-- Invoice Table -->
-<!-- Invoice Table -->
 <div class="col-lg-12 mb-4">
-  <!-- Simple Tables -->
   <div class="card">
     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
       <h6 class="m-0 font-weight-bold text-primary">Factures</h6>
-      <button class="btn btn-primary" data-toggle="modal" data-target="#addInvoiceModal">Add Factures</button>
+      <button class="btn btn-primary" data-toggle="modal" data-target="#addInvoiceModal">Ajouter Facture</button>
     </div>
     <div class="table-responsive">
       <table class="table align-items-center table-flush">
         <thead class="thead-light">
           <tr>
-            <th>ID</th>
-            <th>Project</th>
-            <th>Amount</th>
-            <th>Issue Date</th>
-            <th>Due Date</th>
+            <th>Numéro de facture</th>
+            <th>Objet de facture</th>
+            <th>Client</th>
+            <th>Total brut</th>
+            <th>Total après déduction</th>
             <th>Status</th>
-            <th>Actions</th>
           </tr>
         </thead>
         <tbody id="invoiceTableBody">
@@ -175,10 +170,6 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
       </table>
     </div>
   </div>
-</div>
-
-
-
 </div>
 
 <!-- Add Invoice Modal -->
@@ -198,23 +189,31 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
             <select class="form-control" id="project_id" name="project_id" required></select>
           </div>
           <div class="form-group">
-            <label for="amount">Amount</label>
-            <input type="number" class="form-control" id="amount" name="amount" step="0.01" required>
+            <label for="invoice_number">Numéro de facture</label>
+            <input type="text" class="form-control" id="invoice_number" name="invoice_number" required>
           </div>
           <div class="form-group">
-            <label for="issue_date">Issue Date</label>
-            <input type="date" class="form-control" id="issue_date" name="issue_date" required>
+            <label for="invoice_object">Objet de facture</label>
+            <input type="text" class="form-control" id="invoice_object" name="invoice_object" required>
           </div>
           <div class="form-group">
-            <label for="due_date">Due Date</label>
-            <input type="date" class="form-control" id="due_date" name="due_date" required>
+            <label for="client_name">Client</label>
+            <input type="text" class="form-control" id="client_name" name="client_name" required>
+          </div>
+          <div class="form-group">
+            <label for="gross_total">Total brut</label>
+            <input type="number" class="form-control" id="gross_total" name="gross_total" step="0.01" required>
+          </div>
+          <div class="form-group">
+            <label for="total_after_deduction">Total après déduction</label>
+            <input type="number" class="form-control" id="total_after_deduction" name="total_after_deduction" step="0.01" required>
           </div>
           <div class="form-group">
             <label for="status">Status</label>
             <select class="form-control" id="status" name="status" required>
-              <option value="Pending">Pending</option>
-              <option value="Paid">Paid</option>
-              <option value="Overdue">Overdue</option>
+              <option value="Unpaid">Non payé</option>
+              <option value="Paid">Payé</option>
+              <option value="Overdue">En retard</option>
             </select>
           </div>
           <button type="submit" class="btn btn-primary">Add Invoice</button>
@@ -223,7 +222,6 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
     </div>
   </div>
 </div>
-
 
 <!-- Update Invoice Modal -->
 <div class="modal fade" id="updateInvoiceModal" tabindex="-1" role="dialog" aria-labelledby="updateInvoiceModalLabel" aria-hidden="true">
@@ -243,23 +241,31 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
             <select class="form-control" id="update_project_id" name="project_id" required></select>
           </div>
           <div class="form-group">
-            <label for="update_amount">Amount</label>
-            <input type="number" class="form-control" id="update_amount" name="amount" step="0.01" required>
+            <label for="update_invoice_number">Numéro de facture</label>
+            <input type="text" class="form-control" id="update_invoice_number" name="invoice_number" required>
           </div>
           <div class="form-group">
-            <label for="update_issue_date">Issue Date</label>
-            <input type="date" class="form-control" id="update_issue_date" name="issue_date" required>
+            <label for="update_invoice_object">Objet de facture</label>
+            <input type="text" class="form-control" id="update_invoice_object" name="invoice_object" required>
           </div>
           <div class="form-group">
-            <label for="update_due_date">Due Date</label>
-            <input type="date" class="form-control" id="update_due_date" name="due_date" required>
+            <label for="update_client_name">Client</label>
+            <input type="text" class="form-control" id="update_client_name" name="client_name" required>
+          </div>
+          <div class="form-group">
+            <label for="update_gross_total">Total brut</label>
+            <input type="number" class="form-control" id="update_gross_total" name="gross_total" step="0.01" required>
+          </div>
+          <div class="form-group">
+            <label for="update_total_after_deduction">Total après déduction</label>
+            <input type="number" class="form-control" id="update_total_after_deduction" name="total_after_deduction" step="0.01" required>
           </div>
           <div class="form-group">
             <label for="update_status">Status</label>
             <select class="form-control" id="update_status" name="status" required>
-              <option value="Pending">Pending</option>
-              <option value="Paid">Paid</option>
-              <option value="Overdue">Overdue</option>
+              <option value="Unpaid">Non payé</option>
+              <option value="Paid">Payé</option>
+              <option value="Overdue">En retard</option>
             </select>
           </div>
           <button type="submit" class="btn btn-primary">Update Invoice</button>
@@ -269,28 +275,6 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
   </div>
 </div>
 
-
-<!-- Delete Material Modal -->
-<div class="modal fade" id="deleteMaterialModal" tabindex="-1" role="dialog" aria-labelledby="deleteMaterialModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="deleteMaterialModalLabel">Delete Material</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Are you sure you want to delete this material?</p>
-        <form id="deleteMaterialForm">
-          <input type="hidden" id="deleteMaterialId" name="id">
-          <button type="submit" class="btn btn-danger">Delete</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
 
 
     </div>
@@ -308,11 +292,11 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
                   </button>
                 </div>
                 <div class="modal-body">
-                  <p>Are you sure you want to logout?</p>
+                  <p>Etes vous sur de se deconnecter?</p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
-                  <a href="/" class="btn btn-primary">Logout</a>
+                  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Annuler</button>
+                  <a href="/" class="btn btn-primary">Se Déconnecter</a>
                 </div>
               </div>
             </div>
@@ -331,7 +315,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
     <i class="fas fa-angle-up"></i>
   </a>
   <script>
- document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     fetchProjects();
     loadInvoices();
 
@@ -399,28 +383,30 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
     }
 
     // Load Invoices
-   function loadInvoices() {
-    fetch('http://localhost:3000/api/invoices')
-        .then(response => response.json())
-        .then(invoices => {
-            const tableBody = document.getElementById('invoiceTableBody');
-            tableBody.innerHTML = invoices.map(invoice => `
-                <tr>
-                    <td>${invoice.id}</td>
-                    <td>${invoice.project_name || 'N/A'}</td>
-                    <td>${invoice.amount}</td>
-                    <td>${invoice.issue_date}</td>
-                    <td>${invoice.due_date}</td>
-                    <td>${getStatusBadge(invoice.status)}</td>
-                    <td>
-                        <button class="btn btn-sm btn-warning" onclick="openUpdateInvoiceModal(${invoice.id}, '${invoice.project_id}', '${invoice.amount}', '${invoice.issue_date}', '${invoice.due_date}', '${invoice.status}')">Update</button>
-                        <button class="btn btn-sm btn-danger" onclick="confirmDeleteInvoice(${invoice.id})">Delete</button>
-                    </td>
-                </tr>
-            `).join('');
-        })
-        .catch(error => console.error('Error fetching invoices:', error));
-}
+    function loadInvoices() {
+        fetch('http://localhost:3000/api/invoices')
+            .then(response => response.json())
+            .then(invoices => {
+                const tableBody = document.getElementById('invoiceTableBody');
+                tableBody.innerHTML = invoices.map(invoice => `
+                    <tr>
+                        <td>${invoice.id}</td>
+                        <td>${invoice.invoice_number}</td>
+                        <td>${invoice.invoice_object || 'N/A'}</td>
+                        <td>${invoice.client_name || 'N/A'}</td>
+                        <td>${invoice.gross_total}</td>
+                        <td>${invoice.total_after_deduction}</td>
+                        <td>${invoice.project_name || 'N/A'}</td>
+                        <td>${getStatusBadge(invoice.status)}</td>
+                        <td>
+                            <button class="btn btn-sm btn-warning" onclick="openUpdateInvoiceModal(${invoice.id}, '${invoice.project_name}', '${invoice.invoice_number}', '${invoice.invoice_object}', '${invoice.client_name}', ${invoice.gross_total}, ${invoice.total_after_deduction}, '${invoice.status}')">Update</button>
+                            <button class="btn btn-sm btn-danger" onclick="confirmDeleteInvoice(${invoice.id})">Delete</button>
+                        </td>
+                    </tr>
+                `).join('');
+            })
+            .catch(error => console.error('Error fetching invoices:', error));
+    }
 
     // Get Status Badge
     function getStatusBadge(status) {
@@ -442,12 +428,14 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
     }
 
     // Open Update Invoice Modal
-    window.openUpdateInvoiceModal = function(id, projectId, amount, issueDate, dueDate, status) {
+    window.openUpdateInvoiceModal = function(id, project_name, invoiceNumber, invoiceObject, clientName, grossTotal, totalAfterDeduction, status) {
         document.getElementById('update_invoice_id').value = id;
-        document.getElementById('update_project_id').value = projectId;
-        document.getElementById('update_amount').value = amount;
-        document.getElementById('update_issue_date').value = issueDate;
-        document.getElementById('update_due_date').value = dueDate;
+        document.getElementById('update_project_id').value = project_name;
+        document.getElementById('update_invoice_number').value = invoiceNumber;
+        document.getElementById('update_invoice_object').value = invoiceObject;
+        document.getElementById('update_client_name').value = clientName;
+        document.getElementById('update_gross_total').value = grossTotal;
+        document.getElementById('update_total_after_deduction').value = totalAfterDeduction;
         document.getElementById('update_status').value = status;
 
         fetchProjects(); // Reload project options in the update modal
@@ -467,15 +455,18 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
             .then(response => response.json())
             .then(projects => {
                 const projectSelects = document.querySelectorAll('#project_id, #update_project_id');
+                console.log(projects);
                 projectSelects.forEach(select => {
                     select.innerHTML = projects.map(project => 
-                        `<option value="${project.id}">${project.name}</option>`
+                        `<option value="${project.id}">${project.project_name}</option>`
                     ).join('');
                 });
             })
             .catch(error => console.error('Error fetching projects:', error));
     }
 });
+
+
 
 </script>
 

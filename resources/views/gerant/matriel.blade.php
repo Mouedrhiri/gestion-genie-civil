@@ -36,6 +36,17 @@ background: -webkit-linear-gradient(90deg, hsla(39, 100%, 50%, 1) 0%, hsla(34, 8
 
 filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", endColorstr="#F0A13A", GradientType=1 );
         }
+        .overlay{
+          background: hsla(39, 100%, 50%, 1);
+
+background: linear-gradient(90deg, hsla(39, 100%, 50%, 1) 0%, hsla(34, 86%, 58%, 1) 50%, hsla(335, 81%, 65%, 1) 100%);
+
+background: -moz-linear-gradient(90deg, hsla(39, 100%, 50%, 1) 0%, hsla(34, 86%, 58%, 1) 50%, hsla(335, 81%, 65%, 1) 100%);
+
+background: -webkit-linear-gradient(90deg, hsla(39, 100%, 50%, 1) 0%, hsla(34, 86%, 58%, 1) 50%, hsla(335, 81%, 65%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", endColorstr="#F0A13A", GradientType=1 );
+        }
     </style>
 <div id="wrapper">
     <!-- Sidebar -->
@@ -49,7 +60,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
       <li class="nav-item active">
         <a class="nav-link" href="/dashboard-directeur">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard , Bienvenue Directeur</span></a>
+          <span>Dashboard </span></a>
       </li>
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
@@ -127,7 +138,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <img class="img-profile rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqzimYL8cryUexi41Y0o2AIXlbtmOvOB4bgA&s" style="max-width: 60px">
-                <span class="ml-2 d-none d-lg-inline text-white small">Nasma OUARDI</span>
+                <span class="ml-2 d-none d-lg-inline text-white small">Majd BENNOUNA</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
@@ -147,11 +158,11 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Matriels Listes</h1>
+            <h1 class="h3 mb-0 text-gray-800">Liste des Materiels</h1>
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="./">Home</a></li>
               <li class="breadcrumb-item">Matriels</li>
-              <li class="breadcrumb-item active" aria-current="page">Matriels Listes</li>
+              <li class="breadcrumb-item active" aria-current="page">Liste des Matriels </li>
             </ol>
           </div>
 
@@ -162,20 +173,20 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
   <!-- Simple Tables -->
   <div class="card">
     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-      <h6 class="m-0 font-weight-bold text-primary">Materials Table</h6>
-      <button class="btn btn-primary" data-toggle="modal" data-target="#addMaterialModal">Add Material</button>
+      <h6 class="m-0 font-weight-bold text-danger">Materials Table</h6>
+      <button class="btn btn-primary overlay" data-toggle="modal" data-target="#addMaterialModal">Add Material</button>
     </div>
     <div class="table-responsive">
       <table class="table align-items-center table-flush">
         <thead class="thead-light">
           <tr>
             <th>ID</th>
-            <th>Name</th>
-            <th>Existing Quantity</th>
-            <th>Requested Quantity</th>
-            <th>Unit</th>
-            <th>Unit Price</th>
-            <th>Status</th>
+            <th>Nom</th>
+            <th>Quantité Existante</th>
+            <th>Quantité demandé</th>
+            <th>Unitée</th>
+            <th>Prix à l'unité</th>
+            <th>Etat</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -192,7 +203,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="addMaterialModalLabel">Add New Material</h5>
+        <h5 class="modal-title" id="addMaterialModalLabel">Ajouter nouveau matériel</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -200,30 +211,30 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
       <div class="modal-body">
         <form id="addMaterialForm">
           <div class="form-group">
-            <label for="materialName">Name</label>
+            <label for="materialName">Nom</label>
             <input type="text" class="form-control" id="materialName" name="name" required>
           </div>
           <div class="form-group">
-            <label for="existingQuantity">Existing Quantity</label>
+            <label for="existingQuantity">Quantitée existante</label>
             <input type="number" class="form-control" id="existingQuantity" name="existing_quantity" required>
           </div>
           <div class="form-group">
-            <label for="requestedQuantity">Requested Quantity</label>
+            <label for="requestedQuantity">Quantité demandé</label>
             <input type="number" class="form-control" id="requestedQuantity" name="requested_quantity" required>
           </div>
           <div class="form-group">
-            <label for="materialUnit">Unit</label>
+            <label for="materialUnit">Unitée</label>
             <input type="text" class="form-control" id="materialUnit" name="unit" required>
           </div>
           <div class="form-group">
-            <label for="materialUnitPrice">Unit Price</label>
+            <label for="materialUnitPrice">Prix à l'unitée</label>
             <input type="number" class="form-control" id="materialUnitPrice" name="unit_price" step="0.01" required>
           </div>
           <div class="form-group">
-            <label for="materialStatus">Status</label>
+            <label for="materialStatus">Etat</label>
             <input type="text" class="form-control" id="materialStatus" name="status" required>
           </div>
-          <button type="submit" class="btn btn-primary">Add Material</button>
+          <button type="submit" class="btn btn-primary">Ajouter Matériel</button>
         </form>
       </div>
     </div>
@@ -235,7 +246,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="updateMaterialModalLabel">Update Material</h5>
+        <h5 class="modal-title" id="updateMaterialModalLabel">Modifier Matériel</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -244,30 +255,30 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
         <form id="updateMaterialForm">
           <input type="hidden" id="updateMaterialId" name="id">
           <div class="form-group">
-            <label for="updateMaterialName">Name</label>
+            <label for="updateMaterialName">Nom</label>
             <input type="text" class="form-control" id="updateMaterialName" name="name" required>
           </div>
           <div class="form-group">
-            <label for="updateMaterialExistingQuantity">Existing Quantity</label>
+            <label for="updateMaterialExistingQuantity">Quantitée Existante</label>
             <input type="number" class="form-control" id="updateMaterialExistingQuantity" name="existing_quantity" required>
           </div>
           <div class="form-group">
-            <label for="updateMaterialRequestedQuantity">Requested Quantity</label>
+            <label for="updateMaterialRequestedQuantity">Quantitée Deamndée</label>
             <input type="number" class="form-control" id="updateMaterialRequestedQuantity" name="requested_quantity" required>
           </div>
           <div class="form-group">
-            <label for="updateMaterialUnit">Unit</label>
+            <label for="updateMaterialUnit">Unitée</label>
             <input type="text" class="form-control" id="updateMaterialUnit" name="unit" required>
           </div>
           <div class="form-group">
-            <label for="updateMaterialUnitPrice">Unit Price</label>
+            <label for="updateMaterialUnitPrice">Prix à l'unitée</label>
             <input type="number" class="form-control" id="updateMaterialUnitPrice" name="unit_price" step="0.01" required>
           </div>
           <div class="form-group">
-            <label for="updateMaterialStatus">Status</label>
+            <label for="updateMaterialStatus">Etat</label>
             <input type="text" class="form-control" id="updateMaterialStatus" name="status" required>
           </div>
-          <button type="submit" class="btn btn-primary">Update Material</button>
+          <button type="submit" class="btn btn-primary">Modifier Matériel</button>
         </form>
       </div>
     </div>
@@ -280,17 +291,17 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="deleteMaterialModalLabel">Delete Material</h5>
+        <h5 class="modal-title" id="deleteMaterialModalLabel">Supprimer Matériel</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p>Are you sure you want to delete this material?</p>
+        <p>Etes vous sur de supprimer ce Materiel?</p>
         <form id="deleteMaterialForm">
           <input type="hidden" id="deleteMaterialId" name="id">
-          <button type="submit" class="btn btn-danger">Delete</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-danger">Suppression</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
         </form>
       </div>
     </div>
@@ -307,17 +318,17 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabelLogout">Ohh No!</h5>
+                  <h5 class="modal-title" id="exampleModalLabelLogout">Ohh Non!</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
-                  <p>Are you sure you want to logout?</p>
+                  <p>Etes vous sur de deconnecter?</p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
-                  <a href="/" class="btn btn-primary">Logout</a>
+                  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Annuler</button>
+                  <a href="/" class="btn btn-primary">Se Deconnecter</a>
                 </div>
               </div>
             </div>

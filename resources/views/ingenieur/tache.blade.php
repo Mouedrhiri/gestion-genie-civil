@@ -36,6 +36,17 @@ background: -webkit-linear-gradient(90deg, hsla(39, 100%, 50%, 1) 0%, hsla(34, 8
 
 filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", endColorstr="#F0A13A", GradientType=1 );
         }
+        .overlay{
+          background: hsla(39, 100%, 50%, 1);
+
+background: linear-gradient(90deg, hsla(39, 100%, 50%, 1) 0%, hsla(34, 86%, 58%, 1) 50%, hsla(335, 81%, 65%, 1) 100%);
+
+background: -moz-linear-gradient(90deg, hsla(39, 100%, 50%, 1) 0%, hsla(34, 86%, 58%, 1) 50%, hsla(335, 81%, 65%, 1) 100%);
+
+background: -webkit-linear-gradient(90deg, hsla(39, 100%, 50%, 1) 0%, hsla(34, 86%, 58%, 1) 50%, hsla(335, 81%, 65%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", endColorstr="#F0A13A", GradientType=1 );
+        }
     </style>
 <div id="wrapper">
     <!-- Sidebar -->
@@ -43,13 +54,13 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
         </div>
-        <div class="sidebar-brand-text mx-3">Civil Entreprise</div>
+        <div class="sidebar-brand-text mx-3">MAJD SARL</div>
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item active">
-        <a class="nav-link" href="/dashboard-directeur">
+        <a class="nav-link" href="/dashboard-gerant">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard , Bienvenue Directeur</span></a>
+          <span>Dashboard </span></a>
       </li>
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
@@ -64,27 +75,15 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
         <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Projets et Demandes</h6>
-            <a class="collapse-item" href="/projet-gerant">Projets</a>
-            <a class="collapse-item" href="/demande_de_projet-gerant">Demandes des Projets</a>
+            <a class="collapse-item" href="/projet-ingenieur">Projets</a>
+            <a class="collapse-item" href="/demande_de_projet-ingenieur">Demandes des Projets</a>
           </div>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/facture-gerant">
-          <i class="fas fa-file-invoice"></i>
-          <span>Factures</span>
-        </a>
-      </li>
        <li class="nav-item">
-        <a class="nav-link" href="/tache-gerant">
+        <a class="nav-link" href="/tache-ingenieur">
          <i class="fa fa-tasks"></i>
           <span>Tâches</span>
-        </a>
-      </li>
-        <li class="nav-item">
-        <a class="nav-link" href="/matriel-gerant">
-          <i class="fa fa-industry"></i>
-          <span>Materiels</span>
         </a>
       </li>
       <hr class="sidebar-divider">
@@ -161,19 +160,19 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
 <div class="col-lg-12 mb-4">
   <div class="card">
     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-      <h6 class="m-0 font-weight-bold text-primary">Tasks Table</h6>
-      <button class="btn btn-primary" data-toggle="modal" data-target="#addTaskModal">Add Task</button>
+      <h6 class="m-0 font-weight-bold text-danger">Les Taches</h6>
+      <button class="btn btn-primary overlay" data-toggle="modal" data-target="#addTaskModal">Add Task</button>
     </div>
     <div class="table-responsive">
       <table class="table align-items-center table-flush">
         <thead class="thead-light">
           <tr>
             <th>ID</th>
-            <th>Project</th> <!-- Display project name -->
-            <th>Task Name</th>
+            <th>Projet</th> <!-- Display project name -->
+            <th>Nom de la tache</th>
             <th>Description</th>
-            <th>Status</th>
-            <th>Due Date</th>
+            <th>Etat</th>
+            <th>Date de completion</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -190,7 +189,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="addTaskModalLabel">Add New Task</h5>
+        <h5 class="modal-title" id="addTaskModalLabel">Ajouter Tache</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -198,11 +197,11 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
       <div class="modal-body">
       <form id="addTaskForm">
     <div class="form-group">
-        <label for="project_id">Project</label>
+        <label for="project_id">Projet</label>
         <select class="form-control" id="project_id" name="project_id" required></select>
     </div>
     <div class="form-group">
-        <label for="name">Task Name</label>
+        <label for="name">Nom de la tache</label>
         <input type="text" class="form-control" id="name" name="name" required>
     </div>
     <div class="form-group">
@@ -210,18 +209,18 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
         <input type="text" class="form-control" id="description" name="description" required>
     </div>
     <div class="form-group">
-        <label for="status">Status</label>
+        <label for="status">Etat</label>
         <select class="form-control" id="status" name="status" required>
-            <option value="Not Started">Not Started</option>
-            <option value="In Progress">In Progress</option>
-            <option value="Completed">Completed</option>
+            <option value="Not Started">En Attente</option>
+            <option value="In Progress">Commencée</option>
+            <option value="Completed">Completée</option>
         </select>
     </div>
     <div class="form-group">
-        <label for="due_date">Due Date</label>
+        <label for="due_date">Date</label>
         <input type="date" class="form-control" id="due_date" name="due_date" required>
     </div>
-    <button type="submit" class="btn btn-primary">Add Task</button>
+    <button type="submit" class="btn btn-primary">Ajouetr Tache</button>
 </form>
 
       </div>
@@ -234,7 +233,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="updateTaskModalLabel">Update Task</h5>
+        <h5 class="modal-title" id="updateTaskModalLabel">Modifier Tache</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -243,13 +242,13 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
         <form id="updateTaskForm">
           <input type="hidden" id="updateTaskId" name="id">
           <div class="form-group">
-            <label for="updateTaskProject">Project</label>
+            <label for="updateTaskProject">Projet</label>
             <select class="form-control" id="updateTaskProject" name="project_id" required>
               <!-- Options will be filled by JavaScript -->
             </select>
           </div>
           <div class="form-group">
-            <label for="updateTaskName">Task Name</label>
+            <label for="updateTaskName">Nom de la Tache</label>
             <input type="text" class="form-control" id="updateTaskName" name="name" required>
           </div>
           <div class="form-group">
@@ -257,18 +256,18 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
             <input type="text" class="form-control" id="updateTaskDescription" name="description" required>
           </div>
           <div class="form-group">
-            <label for="updateTaskStatus">Status</label>
+            <label for="updateTaskStatus">Etat</label>
             <select class="form-control" id="updateTaskStatus" name="status">
-              <option value="Not Started">Not Started</option>
-              <option value="In Progress">In Progress</option>
-              <option value="Completed">Completed</option>
+              <option value="Not Started">En Attente</option>
+              <option value="In Progress">Commencée</option>
+              <option value="Completed">Complétée</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="updateTaskDueDate">Due Date</label>
+            <label for="updateTaskDueDate">Date</label>
             <input type="date" class="form-control" id="updateTaskDueDate" name="due_date">
           </div>
-          <button type="submit" class="btn btn-primary">Update Task</button>
+          <button type="submit" class="btn btn-primary">Modifier Tache</button>
         </form>
       </div>
     </div>
@@ -280,17 +279,17 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="deleteTaskModalLabel">Delete Task</h5>
+        <h5 class="modal-title" id="deleteTaskModalLabel">Supprimer Tache</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p>Are you sure you want to delete this task?</p>
+        <p>Etes vous sur de supprimer?</p>
         <form id="deleteTaskForm">
           <input type="hidden" id="deleteTaskId" name="id">
-          <button type="submit" class="btn btn-danger">Delete</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-danger">Supprimer</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
         </form>
       </div>
     </div>
@@ -309,17 +308,17 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFA500", en
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabelLogout">Ohh No!</h5>
+                  <h5 class="modal-title" id="exampleModalLabelLogout">Ohh Non!</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
-                  <p>Are you sure you want to logout?</p>
+                  <p>Etes vous sur de se déconnecter?</p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
-                  <a href="/" class="btn btn-primary">Logout</a>
+                  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Annuler</button>
+                  <a href="/" class="btn btn-primary">Se Déconnecter</a>
                 </div>
               </div>
             </div>
@@ -422,8 +421,8 @@ function loadProjects() {
       addProjectSelect.innerHTML = '';
       updateProjectSelect.innerHTML = '';
       projects.forEach(project => {
-        addProjectSelect.innerHTML += `<option value="${project.id}">${project.name}</option>`;
-        updateProjectSelect.innerHTML += `<option value="${project.id}">${project.name}</option>`;
+        addProjectSelect.innerHTML += `<option value="${project.id}">${project.project_name}</option>`;
+        updateProjectSelect.innerHTML += `<option value="${project.id}">${project.project_name}</option>`;
       });
     })
     .catch(error => console.error('Error:', error));

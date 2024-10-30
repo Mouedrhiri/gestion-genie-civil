@@ -242,15 +242,15 @@ app.delete("/api/clients/:id", (req, res) => {
 });
 //=================================== Projects =================================================
 app.post("/api/projects", (req, res) => {
-    const { client_name, project_object, nature_of_service, service_order_date, execution_delay, amount, status } = req.body;
+    const { client_name,project_name, project_object, nature_of_service, service_order_date, execution_delay, amount, status } = req.body;
 
-    if (!client_name || !project_object) {
+    if (!client_name || !project_object || !project_name) {
         return res.status(400).json({ error: "Client Name and Project Object are required" });
     }
 
     connection.query(
-        "INSERT INTO projects (client_name, project_object, nature_of_service, service_order_date, execution_delay, amount, status) VALUES (?, ?, ?, ?, ?, ?, ?)",
-        [client_name, project_object, nature_of_service, service_order_date, execution_delay, amount, status],
+        "INSERT INTO projects (client_name,project_name, project_object, nature_of_service, service_order_date, execution_delay, amount, status) VALUES (?, ?,?, ?, ?, ?, ?, ?)",
+        [client_name,project_name, project_object, nature_of_service, service_order_date, execution_delay, amount, status],
         (err, results) => {
             if (err) {
                 return res.status(500).json({ error: "Error creating project" });
@@ -265,7 +265,7 @@ app.post("/api/projects", (req, res) => {
 
 app.get("/api/projects", (req, res) => {
     const query = `
-        SELECT id, client_name, project_object, nature_of_service, service_order_date, execution_delay, amount, status
+        SELECT *
         FROM projects
     `;
     connection.query(query, (err, results) => {
